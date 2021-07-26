@@ -93,7 +93,7 @@ async def ban(ctx,member:discord.member,*,reason=None):
 async def unban(ctx,*,member):
     banned_user = await ctx.guild.bans()
     member_name, member_discriminator = member.split('#')
-    for ban_entry in banned-users:
+    for ban_entry in banned_users:
         user = ban_entry.user
         if(user.name, user.discriminator)==(member_name,-member.discriminator):
             await ctx.guild.unban(user)
