@@ -35,6 +35,7 @@ client = commands.Bot(command_prefix = get_prefix, intents = intents)
 
 @client.event
 async def on_ready():
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game('Karnatus'))
     print("Bot's up and running")
 
 @client.event
@@ -96,6 +97,8 @@ async def unban(ctx,*,member):
             await ctx.guild.unban(user)
             await ctx.send(f'Unbanned{user.mention}')
             return
+
+
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
