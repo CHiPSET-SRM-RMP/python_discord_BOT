@@ -7,6 +7,7 @@ kartik tripathi
 #importing modules
 import discord
 import logging
+import random
 from discord import user
 from discord.ext import commands
 
@@ -98,7 +99,29 @@ async def unban(ctx,*,member):
             await ctx.send(f'Unbanned{user.mention}')
             return
 
-
+@client.command(alias = ['8 ball','test'])
+async def _8ball(ctx,*,question):
+    responces = ["It is certain.",
+                "It is decidedly so.",
+                "Without a doubt.",
+                "Yes - definitely.",
+                "You may rely on it.",
+                "As I see it, yes.",
+                "Most likely.",
+                "Outlook good.",
+                "Yes.",
+                "Signs point to yes.",
+                "Reply hazy, try again.",
+                "Ask again later.",
+                "Better not tell you now.",
+                "Cannot predict now.",
+                "Concentrate and ask again.",
+                "Don't count on it.",
+                "My reply is no.",
+                "My sources say no.",
+                "Outlook not so good.",
+                "Very doubtful."]
+                await ctx.send(f'Question:{question}\n Answer: {random.choice(responces)}')
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
