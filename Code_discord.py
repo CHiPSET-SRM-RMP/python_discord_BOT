@@ -25,10 +25,11 @@ logger.addHandler(handler)
 #making bot (intent are the previlage esclation for the bot so that it can access the member lisst or the the gluid)
 intents = discord.Intents(messages = True, guilds = True, reactions = True, members = True, presences = True)
 
-def get_prefix(client,message):
+def get_prefix(client, message):
     with open('prefixes.json','r') as f:
         prefixes = json.load(f)
-        return prefixes[str(message.guild.id)]
+
+    return prefixes[str(message.guild.id)]
 
 client = commands.Bot(command_prefix = get_prefix, intents = intents)
 
@@ -44,9 +45,11 @@ async def on_ready():
 async def on_guild_join(guild):
     with open('prefixes.json','r') as f:
         prefixes = json.load(f)
-        prefixes[str(guild.id)] = '.'
-        with open('prefixes.json','w') as f:
-            json.dump(prefixes, f, indent=4)
+        
+    prefixes[str(guild.id)] = '.'
+    
+    with open('prefixes.json','w') as f:
+        json.dump(prefixes, f, indent=4)
 
 @client.event
 async def on_guild_remove(guild):
