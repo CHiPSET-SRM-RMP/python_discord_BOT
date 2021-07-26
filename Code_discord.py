@@ -121,7 +121,7 @@ async def _8ball(ctx,*,question):
                 "My sources say no.",
                 "Outlook not so good.",
                 "Very doubtful."]
-                await ctx.send(f'Question:{question}\n Answer: {random.choice(responces)}')
+await ctx.send(f'Question:{question}\n Answer: {random.choice(responces)}')
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
