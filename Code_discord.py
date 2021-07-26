@@ -7,6 +7,7 @@ kartik tripathi
 #importing modules
 import discord
 import logging
+import json
 import random
 from discord import user
 from discord.ext import commands
