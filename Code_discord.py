@@ -11,6 +11,8 @@ import json
 import random
 from discord import user
 from discord.ext import commands
+import OS
+
 
 '''
 # importing logger and loging all the process of bot in a text file.
