@@ -13,13 +13,6 @@ from discord import user
 from discord.ext import commands
 
 
-#cogs
-
-class MainCog:
-    def __init__(self, bot):
-        self.bot = bot
-def setup(bot):
-    bot.add_cog(MainCog(bot))
 
 
 #making bot (intent are the previlage esclation for the bot so that it can access the member lisst or the the gluid)
@@ -69,7 +62,7 @@ async def change_prefix(ctx, prefix):
             json.dump(prefixes, f, indent = 4)
             await ctx.send(f'prefix changed to {prefix}') 
 
-client.load_extension("cogs.Code_discord")
+
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
