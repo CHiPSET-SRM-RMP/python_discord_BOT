@@ -6,7 +6,6 @@ kartik tripathi
 
 #importing modules
 import discord
-import logging
 import json
 import Music
 import Basic_functionalities
@@ -14,14 +13,13 @@ from discord import user
 from discord.ext import commands
 
 
-'''
-# importing logger and loging all the process of bot in a text file.
-logger = logging.getLogger('discord')
-logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
-handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-logger.addHandler(handler)
-'''
+#cogs
+
+class MainCog:
+    def __init__(self, bot):
+        self.bot = bot
+def setup(bot):
+    bot.add_cog(MainCog(bot))
 
 
 #making bot (intent are the previlage esclation for the bot so that it can access the member lisst or the the gluid)
@@ -35,12 +33,13 @@ def get_prefix(client, message):
 
 client = commands.Bot(command_prefix = get_prefix, intents = intents)
 
-# assigning tprefix acc to server.
 
 
+
+# assigning the prefix according to server.
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game('Karnatus'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game('Life is Chilled Out'))
     print("Bot's up and running")
 
 @client.event
@@ -70,7 +69,7 @@ async def change_prefix(ctx, prefix):
             json.dump(prefixes, f, indent = 4)
             await ctx.send(f'prefix changed to {prefix}') 
 
-
+client.load_extension("cogs.Code_discord")
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
