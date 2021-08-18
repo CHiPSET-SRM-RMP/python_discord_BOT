@@ -1,7 +1,6 @@
 #music functionality
 import discord
 from discord import voice_client
-from discord.client import client
 from discord.ext import commands
 
 @client.command()
