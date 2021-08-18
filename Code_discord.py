@@ -128,5 +128,10 @@ async def _8ball(ctx,*,question):
                 "Very doubtful."]
     await ctx.send(f'Question:{question}\n Answer: {random.choice(responces)}')
 
+@client.command
+async def connect(* reconnect ,timeout = 10):
+    await ctx.send('the bot is connected')
+
+#vv
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
