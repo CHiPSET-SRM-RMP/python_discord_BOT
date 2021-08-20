@@ -5,6 +5,7 @@ kartik tripathi
 '''
 
 #importing modules
+from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
 import discord
 import json
 from discord import user
@@ -122,16 +123,18 @@ async def _8ball(ctx,*,question):
 
 @client.command(pass_context = True)
 async def join(ctx):
-    channel = ctx.message.author.voice.channel
-    await channel.connect()
+    if(ctx.author.voice):
+        channel = ctx.message.author.voice.channel
+        await channel.connect()
+    else:
+        await ctx.send('no one in the voice chat!')
 
 @client.command(pass_context = True)
 async def leave(ctx):
-    if(ctx.voice_clien):    
-        await ctx.guild.voice_client.disconnect()
-        await ctx.send('I left the channel')
+    if(ctx.voice_client.voice):
+        channel = ctx.guild.channel.VoiceChannel.channel
+        await voice_client.disconnect()
     else:
-        await ctx.send('no')
-
+        await ctx.send("i haven't joined")
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
