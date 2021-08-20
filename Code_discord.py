@@ -131,10 +131,11 @@ async def join(ctx):
 
 @client.command(pass_context = True)
 async def leave(ctx):
-    if(ctx.voice_client.voice):
-        channel = ctx.guild.channel.VoiceChannel.channel
-        await voice_client.disconnect()
+    if (ctx.voice_client): # we don't have to use if(ctx.guild.voice_client):
+        await ctx.voice_client.channel.disconnect()
+        await ctx.send("i left the voice channel as you said")
     else:
         await ctx.send("i haven't joined")
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
+
