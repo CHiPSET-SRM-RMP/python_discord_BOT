@@ -130,9 +130,11 @@ async def join(ctx):
 
 @client.command(pass_context = True)
 async def leave(ctx):
-    ctx.voice_client
-    await ctx.guild.voice_client.disconnect()
-    await ctx.send('I left the channel')
+    if(ctx.voice_clien):    
+        await ctx.guild.voice_client.disconnect()
+        await ctx.send('I left the channel')
+    else:
+        await ctx.send('no')
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
