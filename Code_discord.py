@@ -12,6 +12,7 @@ from discord import user
 from discord import channel
 from discord.ext import commands
 from discord import voice_client
+from discord.ext.commands.core import guild_only
 
 
 
@@ -131,9 +132,9 @@ async def join(ctx):
 
 @client.command(pass_context = True)
 async def leave(ctx):
-    if (ctx.voice_client): # we don't have to use if(ctx.guild.voice_client):
-        await ctx.voice_client.channel.disconnect()
+    if (ctx.voice_client): # checks if bot is in vc
         await ctx.send("i left the voice channel as you said")
+        await ctx.guild.voice_client.disconnect()
     else:
         await ctx.send("i haven't joined")
 # calling bot
