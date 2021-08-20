@@ -5,9 +5,13 @@ kartik tripathi
 '''
 
 #importing modules
+from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
 import discord
 import json
+import Music
+from Music import *
 from discord import user
+from discord import channel
 from discord.ext import commands
 from discord import voice_client
 
@@ -117,6 +121,18 @@ async def _8ball(ctx,*,question):
                 "Outlook not so good.",
                 "Very doubtful."]
     await ctx.send(f'Question:{question}\n Answer: {random.choice(responces)}')
-    
+
+
+@client.command(pass_context = True)
+async def join(ctx):
+    channel = ctx.message.author.voice.channel
+    await channel.connect()
+
+@client.command(pass_context = True)
+async def leave(ctx):
+    ctx.voice_client
+    await ctx.guild.voice_client.disconnect()
+    await ctx.send('I left the channel')
+
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
