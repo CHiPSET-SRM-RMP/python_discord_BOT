@@ -5,11 +5,7 @@ kartik tripathi
 '''
 
 #importing modules
-from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
 import discord
-import json
-import Music
-from Music import *
 from discord import user
 from discord import channel
 from discord.ext import commands
