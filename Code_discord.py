@@ -7,6 +7,7 @@ kartik tripathi
 #importing modules
 from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
 import discord
+import random
 import json
 from discord import user
 from discord import channel
@@ -18,7 +19,9 @@ from discord.ext.commands.core import guild_only
 
 
 #making bot (intent are the previlage esclation for the bot so that it can access the member lisst or the the gluid)
-intents = discord.Intents(messages = True, guilds = True, reactions = True, members = True, presences = True)
+
+
+# intents = discord.Intents(messages = True, guilds = True, reactions = True, members = True, presences = True)
 
 def get_prefix(client, message):
     with open('prefixes.json','r') as f:
@@ -26,9 +29,7 @@ def get_prefix(client, message):
 
     return prefixes[str(message.guild.id)]
 
-client = commands.Bot(command_prefix = get_prefix, intents = intents)
-
-
+client = commands.Bot(command_prefix = get_prefix)
 
 
 # assigning the prefix according to server.
@@ -97,8 +98,8 @@ async def unban(ctx,*,member):
             await ctx.send(f'Unbanned{user.mention}')
             return
 
-@client.command(alias = ['8 ball','test'])
-async def _8ball(ctx,*,question):
+@client.command(aliases = ['8ball,test'])
+async def _8ball(ctx, *, question):
     responces = ["It is certain.",
                 "It is decidedly so.",
                 "Without a doubt.",
@@ -137,6 +138,6 @@ async def leave(ctx):
         await ctx.guild.voice_client.disconnect()
     else:
         await ctx.send("i haven't joined")
-# calling bot
-client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.ir62cwQsbo10p0pkHGMoK4OLWz8')
 
+# calling bot
+client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.hnCHalRaE4vJuStMOzkR58Z5YjI')
