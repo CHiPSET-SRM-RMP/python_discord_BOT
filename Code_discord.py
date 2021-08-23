@@ -5,7 +5,7 @@ kartik tripathi
 '''
 
 #importing modules
-# from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
+from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
 import discord
 import random
 import json
@@ -14,7 +14,7 @@ from discord import channel
 from discord.ext import commands
 from discord import voice_client
 from discord.ext.commands.core import guild_only
-#pynacl
+
 
 
 
