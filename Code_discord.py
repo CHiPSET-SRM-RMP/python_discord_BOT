@@ -28,7 +28,7 @@ def get_prefix(client, message):
         prefixes = json.load(f)
 
     return prefixes[str(message.guild.id)]
-
+# defing bot
 client = commands.Bot(command_prefix = get_prefix)
 
 
