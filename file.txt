@@ -1,6 +1,6 @@
 
 
-intents = discord.Intents(messages = True, guilds = True, reactions = True, members = True, presences = True)
+# intents = discord.Intents(messages = True, guilds = True, reactions = True, members = True, presences = True)
 
 def get_prefix(client, message):
     with open('prefixes.json','r') as f:
