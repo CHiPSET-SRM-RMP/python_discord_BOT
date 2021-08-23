@@ -5,6 +5,7 @@ kartik tripathi
 '''
 
 #importing modules
+#sdfs
 from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
 import discord
 import random
