@@ -14,7 +14,7 @@ from discord import channel
 from discord.ext import commands
 from discord import voice_client
 from discord.ext.commands.core import guild_only
-
+#pynacl
 
 
 
