@@ -138,6 +138,7 @@ async def leave(ctx):
         await ctx.guild.voice_client.disconnect()
     else:
         await ctx.send("i haven't joined")
+        
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.hnCHalRaE4vJuStMOzkR58Z5YjI')
