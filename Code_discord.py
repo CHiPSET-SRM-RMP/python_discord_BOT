@@ -6,6 +6,7 @@ kartik tripathi
 
 #importing modules
 #sdfs
+from abc import get_cache_token
 import discord
 import random
 import json
@@ -143,13 +144,18 @@ async def leave(ctx):
 async def make_channel(ctx):
     guild = ctx.guild
     member = ctx.author
-    admin_role = get(guild.roles, name="Admin")
+    admin_role = get_cache_token(guild.roles, name="Admin")
     overwrites = {
         guild.default_role: discord.PermissionOverwrite(read_messages=False),
         guild.me: discord.PermissionOverwrite(read_messages=True),
         admin_role: discord.PermissionOverwrite(read_messages=True)
     }
     channel = await guild.create_text_channel('secret', overwrites=overwrites)
+    '''
+    You can use Guild.create_text_channel to create a text channel with certain permissions overwrites.
+     The below creates a channel that is visible only to the caller, the bot, and members with the "Admin" role 
+     (You'll need to change that to the appropriate role for your server)
+    '''
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.hnCHalRaE4vJuStMOzkR58Z5YjI')
