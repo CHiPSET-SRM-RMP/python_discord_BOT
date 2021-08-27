@@ -138,7 +138,18 @@ async def leave(ctx):
         await ctx.guild.voice_client.disconnect()
     else:
         await ctx.send("i haven't joined")
-        
+
+@client.command()
+async def make_channel(ctx):
+    guild = ctx.guild
+    member = ctx.author
+    admin_role = get(guild.roles, name="Admin")
+    overwrites = {
+        guild.default_role: discord.PermissionOverwrite(read_messages=False),
+        guild.me: discord.PermissionOverwrite(read_messages=True),
+        admin_role: discord.PermissionOverwrite(read_messages=True)
+    }
+    channel = await guild.create_text_channel('secret', overwrites=overwrites)
 
 # calling bot
 client.run('ODU4NjA0NDk3NzY4MDIyMDI2.YNgjwA.hnCHalRaE4vJuStMOzkR58Z5YjI')
