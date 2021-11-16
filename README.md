@@ -19,6 +19,9 @@ Here "prefixes.json" is the file that is being used to store infor for you can u
 
 4. You can print the member join and leave in discord channel instead of console just by adding "channel client.get.channel(channel id)".
 *Client can be anything but you have to define it in (client = commands.Bot(command_prefix = get_prefix, intents = intents))*
+ 
+ 5. So now adding the feature after the update of 1.0.2, You can make the bot play any any kind of song from video. this may effect the quality of the file but it is possible that te fole get affetcet.
+ 
 
 # Setting The Bot
 
@@ -28,3 +31,4 @@ Use command ". help" to see all commands.
 For changing the prefix You can use ". change_prefix (your prefix)"
 
 # ALL SET
+ 
